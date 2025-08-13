@@ -536,3 +536,8 @@ footer {
     padding: 1.5rem;
   }
 }
+.hidden {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+}
