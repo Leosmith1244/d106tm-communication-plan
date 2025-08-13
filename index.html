@@ -147,29 +147,45 @@
                     </div>
                 </div>
                 
-                <div class="register-form">
-                    <h3>Submit Your Event</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Event Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="date" placeholder="Date" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Location" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Club Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Event Description" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Submit Event <i class="fas fa-paper-plane"></i></button>
-                    </form>
+              <div class="register-form">
+    <h3>Submit Your Event</h3>
+    <form name="event-submission" method="POST" netlify data-netlify-honeypot="bot-field" action="/thank-you">
+        <!-- Hidden form-name field (must match form name attribute) -->
+        <input type="hidden" name="form-name" value="event-submission">
+        
+        <!-- Honeypot field for spam prevention (hidden with CSS) -->
+        <p class="hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
+        
+        <div class="form-group">
+            <input type="text" name="event-name" placeholder="Event Name" required>
+        </div>
+        <div class="form-group">
+            <input type="date" name="event-date" placeholder="Date" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="event-location" placeholder="Location" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="club-name" placeholder="Club Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <textarea name="event-description" placeholder="Event Description" rows="4" required></textarea>
+        </div>
+        
+        <!-- File upload example (optional) -->
+        <div class="form-group">
+            <label for="event-photos">Upload Photos (optional)</label>
+            <input type="file" id="event-photos" name="event-photos" multiple>
+        </div>
+        
+        <button type="submit" class="btn">Submit Event <i class="fas fa-paper-plane"></i></button>
+    </form>
+</div>
                 </div>
             </div>
         </div>
