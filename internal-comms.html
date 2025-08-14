@@ -175,7 +175,47 @@
                         <p>For best results, include high-quality photos, quotes from participants, and measurable outcomes when possible.</p>
                     </div>
                 </div>
-                
+                <div class="register-form">
+    <h3>Submit Your Story</h3>
+    <form name="internal-comms-story" method="POST" netlify data-netlify-honeypot="bot-field" action="/thank-you" enctype="multipart/form-data">
+        <!-- Netlify Form Identification -->
+        <input type="hidden" name="form-name" value="internal-comms-story">
+        
+        <!-- Honeypot Field -->
+        <div class="form-group hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </div>
+        
+        <!-- Form Fields -->
+        <div class="form-group">
+            <input type="text" name="submitter-name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="submitter-email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="club-name" placeholder="Club Name" required>
+        </div>
+        <div class="form-group">
+            <select name="story-type" required>
+                <option value="">Select Submission Type</option>
+                <option value="Member Spotlight">Member Spotlight</option>
+                <option value="Club Achievement">Club Achievement</option>
+                <option value="Event Recap">Event Recap</option>
+                <option value="Leadership Story">Leadership Story</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea name="story-content" placeholder="Tell us your story (include dates, names, and key details)" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="story-photos">Upload Photos (optional)</label>
+            <input type="file" id="story-photos" name="story-photos" multiple accept="image/*">
+        </div>
+        <button type="submit" class="btn">Submit Story <i class="fas fa-paper-plane"></i></button>
+    </form>
+</div>
                 
             </div>
         </div>
