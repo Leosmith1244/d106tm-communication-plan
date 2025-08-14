@@ -225,42 +225,58 @@
                 </div>
                 
                 <div class="register-form">
-                    <h3>Submit Content for Promotion</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Club Name" required>
-                        </div>
-                        <div class="form-group">
-                            <select required>
-                                <option value="">Select Content Type</option>
-                                <option>Event Announcement</option>
-                                <option>Achievement Celebration</option>
-                                <option>Member Spotlight</option>
-                                <option>Club Milestone</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Description (include key details and why it's noteworthy)" rows="4" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="media-upload">Upload Photos/Videos (optional)</label>
-                            <input type="file" id="media-upload" multiple>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                <input type="checkbox" required> I have permission to share these photos/videos
-                            </label>
-                        </div>
-                        <button type="submit" class="btn">Submit Content <i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+    <h3>Submit Content for Promotion</h3>
+    <form name="social-media-submission" method="POST" netlify data-netlify-honeypot="bot-field" action="/thank-you" enctype="multipart/form-data">
+        <!-- Netlify Form Identification -->
+        <input type="hidden" name="form-name" value="social-media-submission">
+        
+        <!-- Honeypot Field -->
+        <div class="form-group hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </div>
+        
+        <!-- Form Fields -->
+        <div class="form-group">
+            <input type="text" name="submitter-name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="submitter-email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="club-name" placeholder="Club Name" required>
+        </div>
+        <div class="form-group">
+            <select name="content-type" required>
+                <option value="">Select Content Type</option>
+                <option value="Event Announcement">Event Announcement</option>
+                <option value="Achievement Celebration">Achievement Celebration</option>
+                <option value="Member Spotlight">Member Spotlight</option>
+                <option value="Club Milestone">Club Milestone</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea name="content-description" placeholder="Description (include key details and why it's noteworthy)" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="media-upload">Upload Photos/Videos (optional, max 10MB each)</label>
+            <input type="file" id="media-upload" name="media-files" multiple accept="image/*,video/*,.pdf">
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="media-release" required>
+                I have permission to share these photos/videos
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="social-media-consent">
+                I'd like to be tagged when this is shared on social media
+            </label>
+        </div>
+        <button type="submit" class="btn">Submit Content <i class="fas fa-paper-plane"></i></button>
+    </form>
+</div>
             </div>
         </div>
     </section>
