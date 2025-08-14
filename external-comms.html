@@ -171,37 +171,54 @@
                     </div>
                 </div>
                 
-                <div class="register-form">
-                    <h3>Submit Your Event</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Event Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="date" placeholder="Date" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="time" placeholder="Time">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Location" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Club Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Event Description (include why it's newsworthy)" rows="4" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="event-photos">Upload Photos (optional)</label>
-                            <input type="file" id="event-photos" multiple>
-                        </div>
-                        <button type="submit" class="btn">Submit Event <i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+               <div class="register-form">
+    <h3>Submit Your Event</h3>
+    <form name="external-event-submission" method="POST" netlify data-netlify-honeypot="bot-field" action="/thank-you" enctype="multipart/form-data">
+        <!-- Netlify Form Identification -->
+        <input type="hidden" name="form-name" value="external-event-submission">
+        
+        <!-- Honeypot Field -->
+        <div class="form-group hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </div>
+        
+        <!-- Form Fields -->
+        <div class="form-group">
+            <input type="text" name="event-name" placeholder="Event Name" required>
+        </div>
+        <div class="form-group">
+            <input type="date" name="event-date" placeholder="Date" required>
+        </div>
+        <div class="form-group">
+            <input type="time" name="event-time" placeholder="Time">
+        </div>
+        <div class="form-group">
+            <input type="text" name="event-location" placeholder="Location" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="club-name" placeholder="Club Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="organizer-email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <textarea name="event-description" placeholder="Event Description (include why it's newsworthy)" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="event-photos">Upload Photos (optional, max 10MB each)</label>
+            <input type="file" id="event-photos" name="event-photos" multiple accept="image/*,.pdf,.doc,.docx">
+        </div>
+        
+        <div class="form-group" style="margin-top: 1rem;">
+            <label>
+                <input type="checkbox" name="media-release" required>
+                I have permission to share these photos/videos
+            </label>
+        </div>
+        
+        <button type="submit" class="btn">Submit Event <i class="fas fa-paper-plane"></i></button>
+    </form>
+</div>
             </div>
         </div>
     </section>
