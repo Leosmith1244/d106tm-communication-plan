@@ -26,7 +26,7 @@
         </div>
     </nav>
 
-    <section class="hero" style="background-image: linear-gradient(rgba(0, 65, 101, 0.5), rgba(0, 65, 101, 0.5)), url('../images/resources.jpg');">
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 65, 101, 0.9), rgba(0, 65, 101, 0.9)), url('../images/resources.jpg');">
         <div class="hero-content">
             <h1>PR & Branding Resources</h1>
             <p class="hero-subtitle">Essential tools and guidelines to support your club's public relations and branding efforts</p>
@@ -45,7 +45,7 @@
                     </div>
                     <h3>Let the World Know Handbook</h3>
                     <p>Comprehensive guide to public relations for Toastmasters clubs</p>
-                    <a href="https://ccdn.toastmasters.org/medias/files/department-documents/marketing-documents/1140-let-the-world-know.pdf" target="_blank" class="btn">View Handbook</a>
+                    <a href="https://www.toastmasters.org/~/media/4961f7be4b244a12a39426d0c9193cd1.ashx" target="_blank" class="btn">View Handbook</a>
                 </div>
                 
                 <div class="training-card">
@@ -54,7 +54,7 @@
                     </div>
                     <h3>Brand Manual</h3>
                     <p>Official branding guidelines for Toastmasters materials</p>
-                    <a href="https://content.toastmasters.org/image/upload/02330-001-0001-brand-manual.pdf" target="_blank" class="btn">View Manual</a>
+                    <a href="https://www.toastmasters.org/Resources/Resource-Library?t=brand%20manual" target="_blank" class="btn">View Manual</a>
                 </div>
                 
                 <div class="training-card">
@@ -72,7 +72,7 @@
                     </div>
                     <h3>Logo, Images, and Templates</h3>
                     <p>Official Toastmasters brand assets</p>
-                    <a href="https://www.toastmasters.org/BrandPortal" target="_blank" class="btn">View Assets</a>
+                    <a href="https://www.toastmasters.org/resources/logos-images-and-templates" target="_blank" class="btn">View Assets</a>
                 </div>
                 
                 <div class="training-card">
@@ -109,14 +109,6 @@
                     <h3>Toastmasters Tips for Success</h3>
                     <p>Best practices for club success</p>
                     <a href="https://www.toastmasters.org/resources/toastmasters%20tips%20for%20success" target="_blank" class="btn">View Tips</a>
-                </div>
-                 <div class="training-card">
-                    <div class="card-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Toastmasters Brand Ambassador</h3>
-                    <p>Best practices for our brand</p>
-                    <a href="https://link.us-1.lytho.us/i/1690570343822b4a355d5-2212-4745-a8ca-2e53f2b9957c#page-624b4283-318f-42f5-acd5-2105b5a6c53a" target="_blank" class="btn">Brand Ambassador Guide</a>
                 </div>
             </div>
         </div>
@@ -175,34 +167,43 @@
                     </div>
                 </div>
                 
-                <div class="register-form">
-                    <h3>Request Assistance</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Club Name">
-                        </div>
-                        <div class="form-group">
-                            <select required>
-                                <option value="">Select Resource Type</option>
-                                <option>Branding Guidelines</option>
-                                <option>Press Release Help</option>
-                                <option>Social Media Support</option>
-                                <option>Graphic Design</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Describe your request or question" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Submit Request <i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+               <div class="register-form">
+    <h3>Request Assistance</h3>
+    <form name="resources-assistance" method="POST" netlify data-netlify-honeypot="bot-field" action="/thank-you">
+        <!-- Netlify Form Identification -->
+        <input type="hidden" name="form-name" value="resources-assistance">
+        
+        <!-- Honeypot Field -->
+        <div class="form-group hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </div>
+        
+        <!-- Updated Form Fields -->
+        <div class="form-group">
+            <input type="text" name="requestor-name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="requestor-email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="club-name" placeholder="Club Name">
+        </div>
+        <div class="form-group">
+            <select name="resource-type" required>
+                <option value="">Select Resource Type</option>
+                <option value="Branding Guidelines">Branding Guidelines</option>
+                <option value="Press Release Help">Press Release Help</option>
+                <option value="Social Media Support">Social Media Support</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea name="request-details" placeholder="Describe your request or question" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit Request <i class="fas fa-paper-plane"></i></button>
+    </form>
+</div>
             </div>
         </div>
     </section>

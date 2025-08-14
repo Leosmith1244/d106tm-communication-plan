@@ -26,7 +26,7 @@
         </div>
     </nav>
 
-    <section class="hero" style="background-image: linear-gradient(rgba(0, 65, 101, 0.5), rgba(0, 65, 101, 0.5)), url('../images/team.jpg');">
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 65, 101, 0.9), rgba(0, 65, 101, 0.9)), url('../images/team.jpg');">
         <div class="hero-content">
             <h1>Public Relations Team</h1>
             <p class="hero-subtitle">Our dedicated team drives District 106's communication efforts, ensuring consistent messaging and vibrant engagement</p>
@@ -114,7 +114,7 @@
                     </div>
                     <h3>District Website</h3>
                     <p><a href="https://d106tm.org/" target="_blank">d106tm.org</a></p>
-                    <p class="card-date">Coordinator: Juliana Hoffman</p>
+                    <p class="card-date">Coordinator: Leo Smith</p>
                 </div>
                 
                 <div class="training-card">
@@ -179,22 +179,6 @@
                     <p>Distributed via Constant Contact</p>
                     <p class="card-date">Editor: Jamie Mavec</p>
                 </div>
-                 <div class="training-card">
-                    <div class="card-icon">
-                        <i class="fab fa-facebook"></i>
-                    </div>
-                    <h3>Region 3 Facebook Group</h3>
-                    <p><a href="https://www.facebook.com/groups/region3toastmastersinternational" target="_blank">facebook.com/groups/District106</a></p>
-                    <p class="card-date">Coordinator: Leo Smith</p>
-                </div>
-                <div class="training-card">
-                    <div class="card-icon">
-                        <i class="fab fa-facebook"></i>
-                    </div>
-                    <h3>The Official Toastmasters International Members Group</h3>
-                    <p><a href="https://www.facebook.com/groups/ToastmastersInternationalMembers" target="_blank">TI Members Group</a></p>
-                    <p class="card-date">Coordinator: Leo Smith</p>
-                </div>
             </div>
         </div>
     </section>
@@ -208,7 +192,7 @@
                 <div class="register-info">
                     <h3>Contact Information</h3>
                     <ul>
-                        <li><strong>General Inquiries:</strong> <a href="mailto:leo.w.smith@gmail.com">leo.w.smith@gmail.com</a></li>
+                        <li><strong>General Inquiries:</strong> <a href="mailto:district106tm@gmail.com">district106tm@gmail.com</a></li>
                         <li><strong>PR Manager:</strong> <a href="mailto:prm@d106tm.org">prm@d106tm.org</a></li>
                         <li><strong>Webmaster:</strong> <a href="mailto:webeditor@d106tm.org">webeditor@d106tm.org</a></li>
                         <li><strong>Newsletter:</strong> <a href="mailto:newsletter@d106tm.org">newsletter@d106tm.org</a></li>
@@ -223,32 +207,41 @@
                 </div>
                 
                 <div class="register-form">
-                    <h3>Join Our Team</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Phone Number">
-                        </div>
-                        <div class="form-group">
-                            <select required>
-                                <option value="">Select Role of Interest</option>
-                                <option>Social Media Coordinator</option>
-                                <option>Graphic Designer</option>
-                                <option>Podcast Manager</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Tell us about your experience and why you're interested" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Submit Application <i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+    <h3>Join Our Team</h3>
+    <form name="pr-team-application" method="POST" netlify data-netlify-honeypot="bot-field" action="/thank-you">
+        <!-- Netlify Form Identification -->
+        <input type="hidden" name="form-name" value="pr-team-application">
+        
+        <!-- Honeypot Field (hidden with CSS) -->
+        <div class="form-group hidden">
+            <label>Leave this blank if you're human: <input name="bot-field"></label>
+        </div>
+        
+        <!-- Form Fields (all updated with name attributes) -->
+        <div class="form-group">
+            <input type="text" name="applicant-name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="applicant-email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <input type="tel" name="phone-number" placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+            <select name="role-interest" required>
+                <option value="">Select Role of Interest</option>
+                <option value="Social Media Coordinator">Social Media Coordinator</option>
+                <option value="Graphic Designer">Graphic Designer</option>
+                <option value="Podcast Manager">Podcast Manager</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea name="applicant-experience" placeholder="Tell us about your experience and why you're interested" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit Application <i class="fas fa-paper-plane"></i></button>
+    </form>
+</div>
             </div>
         </div>
     </section>
