@@ -541,3 +541,12 @@ footer {
     left: -9999px;
     opacity: 0;
 }
+
+/* Style for checkbox label */
+form label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
